@@ -1,0 +1,17 @@
+pydantic[email]==2.6.4
+uvicorn==0.29.0
+fastapi==0.110.0
+requests==2.31.0
+numpy
+pillow
+python-multipart
+opencv-python
+pytube
+pafy
+imageio
+ultralytics
+mss
+selenium
+webdriver-manager
+typer
+azure-ai-vision-imageanalysis
