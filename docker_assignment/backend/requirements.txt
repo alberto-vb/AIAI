@@ -1,0 +1,8 @@
+tensorflow
+pillow
+uvicorn
+fastapi
+requests
+pydantic
+matplotlib
+starlette

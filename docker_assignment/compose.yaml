@@ -1,0 +1,17 @@
+version: '3'
+services:
+  backend:
+    build:
+      context: ./backend          # Build the backend from the backend directory
+      dockerfile: Dockerfile       # Specify the Dockerfile for the backend
+    ports:
+      - "8000:8000"               # Map the Flask API port
+    volumes:
+      - ./backend:/app            # Mount the backend directory into the container
+
+  frontend:
+    build:
+      context: ./frontend         # Build the frontend from the frontend directory
+      dockerfile: Dockerfile       # Specify the Dockerfile for the frontend
+    ports:
+      - "3000:3000"               # Map the Next.js port
