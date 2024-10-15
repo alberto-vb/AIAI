@@ -9,7 +9,7 @@ from PIL import Image, ImageEnhance
 from starlette.middleware.cors import CORSMiddleware
 import tensorflow as tf
 
-model = tf.keras.models.load_model('mnist_cnn_model.keras')
+model = tf.keras.models.load_model('mnist_cnn_model_retrained.keras')
 
 app = FastAPI()
 
