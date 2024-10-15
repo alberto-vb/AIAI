@@ -5,7 +5,7 @@ services:
       context: ./backend          # Build the backend from the backend directory
       dockerfile: Dockerfile       # Specify the Dockerfile for the backend
     ports:
-      - "8000:8000"               # Map the Flask API port
+      - "8000:8000"               # Map the FastAPI port
 
   frontend:
     build:
