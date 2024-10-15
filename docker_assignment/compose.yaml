@@ -6,8 +6,6 @@ services:
       dockerfile: Dockerfile       # Specify the Dockerfile for the backend
     ports:
       - "8000:8000"               # Map the Flask API port
-    volumes:
-      - ./backend:/app            # Mount the backend directory into the container
 
   frontend:
     build:
