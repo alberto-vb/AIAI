@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/chart";
 import { Bar, BarChart, CartesianGrid, XAxis } from "recharts";
 import { Draw } from "@/app/types/type";
+import { HUGGING_FACE_ENDPOINT, LOCAL_ENDPOINT } from "@/app/consts"
 
 const chartConfig = {
   probability: {
@@ -54,7 +55,7 @@ export default function Home() {
     ctx.fill();
   }
 
-  const sendCanvas = async () => {
+  const sendCanvas = async (url: string) => {
     const canvas = canvasRef.current;
 
     if (!canvas) return;
@@ -63,7 +64,7 @@ export default function Home() {
     const dataURL = canvas.toDataURL("image/png");
 
     // Send the Base64 image to the backend
-    const response = await fetch("http://localhost:8000/inference", {
+    const response = await fetch(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -136,9 +137,16 @@ export default function Home() {
           <button
             type="button"
             className="p-2 rounded-md border border-black"
-            onClick={sendCanvas}
+            onClick={() => sendCanvas(HUGGING_FACE_ENDPOINT)}
           >
-            Send canvas
+            Send canvas to Hugging Face endpoint
+          </button>
+          <button
+            type="button"
+            className="p-2 rounded-md border border-black"
+            onClick={() => sendCanvas(LOCAL_ENDPOINT)}
+          >
+            Send canvas locally
           </button>
         </div>
       </div>
